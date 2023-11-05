@@ -11,19 +11,22 @@
       center
     >
       <div class="my-card" v-for="item in 10" :key="item">
-        <div>
+        <!-- 头部图片 -->
+        <div style="overflow: hidden">
           <img
             src="./assets/zs.jpg"
             style="height: 130px; width: 100%; background-size: cover"
             alt=""
           />
         </div>
-        <div style="text-align: center">
-          <el-button
-            style="margin-top: 150px"
-            type="primary"
-            plain
-            @click="download(item)"
+        <!-- 中部时间 -->
+        <div style="text-align: center; margin-top: 40px">
+          <p>开始时间：2023 11-05 18:00</p>
+          <p>结束时间：2023 11-06 18:00</p>
+        </div>
+        <!-- 底部按钮 -->
+        <div style="text-align: center; margin-top: 100px">
+          <el-button type="primary" plain @click="download(item)"
             >下载</el-button
           >
         </div>
@@ -86,11 +89,11 @@ export default {
   height: 400px;
   width: 280px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
   margin: 0 22px 24px 0;
   box-sizing: border-box;
+  transition: all 0.5s;
   &:hover {
-    transition: all 0.3s;
+    transition: all 0.5s;
     cursor: pointer;
     transform: translateY(-10px);
     box-shadow: 0 12px 20px 0 rgba(95, 101, 105, 0.15);
@@ -99,6 +102,12 @@ export default {
 
 .my-card:nth-child(4n) {
   margin-right: 0;
+}
+
+.my-card:hover img {
+  transition: all 0.5s;
+  /* background-size: cover; */
+  transform: scale(1.2);
 }
 
 .zs-title {

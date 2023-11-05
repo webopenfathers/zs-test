@@ -39,7 +39,7 @@
     <!-- 证书具体内容弹框 -->
     <el-dialog title="提示" :visible.sync="isVisible" width="80%" center>
       <!-- 为了居中 -->
-      <div class="zs-wrapper" style="text-align: center">
+      <div class="zs-wrapper">
         <!-- 为了贴合图片，方便定位 -->
         <div class="zs-container">
           <span class="zs-title">恭喜张博闻获得通过证书({{ index }})</span>
@@ -109,6 +109,11 @@ export default {
   font-weight: bold;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.zs-wrapper {
+  text-align: center;
+  overflow: auto;
 }
 
 .zs-container {

@@ -41,7 +41,7 @@
       <!-- 为了居中 -->
       <div class="zs-wrapper" style="text-align: center">
         <!-- 为了贴合图片，方便定位 -->
-        <div id="zsRef" style="display: inline-block; position: relative">
+        <div class="zs-container">
           <span class="zs-title">恭喜张博闻获得通过证书({{ index }})</span>
           <img src="./assets/zbw.jpg" alt="" />
         </div>
@@ -73,7 +73,7 @@ export default {
     },
 
     downLoadZS() {
-      getPdf('zbw', document.getElementById('zsRef'))
+      getPdf('zbw', document.querySelector('.zs-container'))
       this.isVisible = false
     },
   },
@@ -109,5 +109,12 @@ export default {
   font-weight: bold;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.zs-container {
+  display: inline-block;
+  position: relative;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 </style>
